@@ -1,0 +1,22 @@
+body{
+   
+
+}
+
+H1{
+    text-align: center;
+}
+
+img{
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    background-color: blue;
+    text-align: center;
+}
+
+li{
+
+}

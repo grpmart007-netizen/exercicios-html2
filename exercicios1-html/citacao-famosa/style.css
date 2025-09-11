@@ -1,0 +1,16 @@
+body{
+    font-style: italic;
+}
+
+blockquote{
+    border-left: 3px solid gray;
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    margin: auto
+}
+
+
+
+
+

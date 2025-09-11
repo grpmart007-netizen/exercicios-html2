@@ -1,0 +1,26 @@
+body {
+    background: black;
+    color:white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 56px;
+    color: yellow;
+}
+
+p {
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    COLOR: yellow;
+    font-weight: bold;
+}
+
+IMG {
+    width: 50%;
+    border-radius: 8px;
+}

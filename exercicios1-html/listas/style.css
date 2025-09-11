@@ -1,0 +1,11 @@
+h1{
+    color: orange;
+}
+
+ul{
+    background-color: #fffbe6;
+    padding: 10px;
+    border-radius: 10px;
+    list-style-type: square;
+}
+

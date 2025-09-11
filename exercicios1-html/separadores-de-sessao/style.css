@@ -1,0 +1,15 @@
+h2{
+    color: red;
+    color: green;
+} 
+
+P{
+    padding: 15px;
+}
+
+hr{border-color: lightgray;}  
+
+body{
+    font-family: sans-serif;
+}
+

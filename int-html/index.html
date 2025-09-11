@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro site</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Olá mundo</h1>
+  <p>Esse é meu primeiro site</p> 
+  <img src="CristianoRonaldo.jpeg" alt="Imagem do Cristiano Ronaldo" width="900">
+  <a href="https://www.youtube.com/@negaooriginal" TARGET="_blank"> Clique para ver O Negão Original</a>
+
+  <p>Quer me conhecer? <a onclick="funcao()">Clique aqui</a></p>
+
+  <script>
+    //alert("Bem-vindo ao meu site!");
+
+    function funcao() {
+    var nome = prompt('Qual o seu nome?');
+
+    document.querySelector('h1').innerHTML = `Olá ${nome}`
+  }
+    var nome; // Criando uma variável (um espaço na memória)
+    nome = "Wallace" // Atribuindo um valor à variável "nome"
+
+    console.log(true);
+  </script>
+</body>
+</html>
