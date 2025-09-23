@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <form action="/enviar" method="post">
+     <fieldset>
+        Nome: <input type="text" name="nome" placeholder="Insira seu nome">  <br>
+     </fieldset>
+
+     <fieldset>
+       Sobrenome: <input type="text" name="sobrenome" placeholder="Insira seu sobrenome">  <br>
+     </fieldset>
+
+      <fieldset>
+       Data: <input type="date" name="Data"
+        placeholder="Insira a data"><br>
+     </fieldset>
+    
+     <fieldset>
+          Genero:
+          <input type="radio" name="Data">Masculino
+          <input type="radio" name="Data">Feminino
+          <input type="radio" name="Data">Outro
+      </fieldset>
+
+      <fieldset>
+       Descrição: <textarea name="Descricao" id="Descricao" placeholder="Conte sobre você"></textarea>
+      </fieldset>
+
+      <fieldset class="Consentimento">
+        Estou de Acordo com o uso de dados <input type="checkbox" name="Consentimento"
+        placeholder="Consentimento"><br>
+      </fieldset>
+
+      <fieldset>
+          <button type="submit">Enviar</botton>
+          <button type="reset">Limpar dados</button>
+      </fieldset>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/enviar" method="post">
+     <div>
+        <input type="text" name="nome" placeholder="Insira seu nome">  <br>
+     </div>
+     
+     <div>
+        <input type="password" name="senha"
+        placeholder="Insira sua senha"><br>
+     </div>
+
+     <div>
+        <input type="number" name="idade"
+        placeholder="Insira sua idade"><br>
+     </div>
+
+     <div>
+        <input type="email" name="email"
+        placeholder="Insira seu E-mail"> <br>
+     </div>
+
+     <div>
+        <input type="date" name="Data"
+        placeholder="Insira a data"><br>
+     </div>
+
+     <div>
+        <textarea name="Descricao" id="Descricao" placeholder="Conte sobre você"></textarea>
+    </div>
+
+     <select name="" id="">
+        <option value="Guerreiro">Guerreiro</option>
+        <option value="mago">mago</option>
+        <option value="curandeiro">curandeiro</option>
+        
+     </select>
+      <div class="Consentimento">
+        Estou de Acordo com o uso de dados <input type="checkbox" name="Consentimento"
+        placeholder="Consentimento"><br>
+      </div>
+
+      <div>
+          Genero:
+          <input type="radio" name="Data">Masculino
+          <input type="radio" name="Data">Feminino
+          <input type="radio" name="Data">Outro
+      </div>
+
+      <div>
+          <button type="submit">Enviar</botton>
+          <button type="reset">Limpar dados</button>
+      </div>
+
+    </form>
+    
+</body>
+</html>
