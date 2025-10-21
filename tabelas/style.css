@@ -1,0 +1,14 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+td{
+    border: 3px solid #ddd ;
+    padding: 8px;
+}
+
+thead, #Total{
+    background-color: black;
+    color: aliceblue;
+}
+

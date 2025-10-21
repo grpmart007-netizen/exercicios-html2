@@ -1,0 +1,9 @@
+body{
+    background-color: cadetblue;
+
+}
+
+.imagens{
+     display: flex;
+    justify-content: center;
+}

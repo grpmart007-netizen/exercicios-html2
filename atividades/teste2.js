@@ -47,3 +47,4 @@ console.log(calculaAreaCirculo(1));
 let areaTotal = calculaAreaTriangulo + calculaAreaQuadrado - calculaAreaCirculo;
 
 console.log(areaTotal);
+
