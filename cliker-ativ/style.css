@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: mudarCor 5s linear infinite;
+}
+
+@keyframes mudarCor{
+    0%{
+        background-color: orange;
+
+    }
+    50%{
+        background-color: red;
+
+    }
+    100%{
+        background-color: orange;
+
+    }
+}
+
+#botao{
+    animation: girar 30s linear infinite
+}
+.girar{
+    animation: girar 30s linear infinite
+}
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+
+    }
+    to{
+        transform: rotate(360deg);
+
+    }
+}
