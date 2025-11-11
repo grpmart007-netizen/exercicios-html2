@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 80px 1fr 60px;
+}
+
+header{
+    background-color: #637074;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+div{
+    text-align: center;
+    font-size: 30px;
+}
+main{
+    background-color: #aab9cf;
+}
+footer{
+    background-color: #212227;
+}
+
+#minha-foto{
+    width: 300px;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+.sobre-mim{
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+}
+#texto-sobre-mim{
+    margin: 20px;
+    padding: 20px;
+    max-width: 600px;
+    font-size: 20px;
+    border: 1px solid #212227;
+    border-radius: 50px;
+    background-color: #8693ab;
+}
+
+.items{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 1000px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.item{
+    height: 400px;
+    width: 300px;
+    border: 2px solid black;
+    padding-top: 50px;
+}
+.iten-img{
+    width: 70%;
+}
+#img-css{
+    width: 150px;
+}
+.item-txt{
+    font-size: 22px;
+}
