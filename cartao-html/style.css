@@ -1,8 +1,20 @@
 body{
     background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-h1{
+h1, p{
     text-align: center;
     color: white;
+}
+button{
+   
+    color: white;
+    margin: 10px;
+}
+img{
+    border-radius: 40px;
+
 }

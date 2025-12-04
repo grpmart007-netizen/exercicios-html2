@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria com Efeito Hover</title>
+<style>
+    /* Container geral */
+    .galeria {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Imagem principal */
+    .imagem-principal {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Efeito na imagem principal ao passar o mouse */
+    .imagem-principal:hover {
+        transform: scale(1.02);
+    }
+
+    /* Container das miniaturas */
+    .miniaturas {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* Miniaturas */
+    .miniaturas img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Efeito hover nas miniaturas */
+    .miniaturas img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+<body>
+
+<div class="galeria">
+    <!-- Imagem principal -->
+    <img src="https://via.placeholder.com/600x400" alt="Imagem Principal" class="imagem-principal" id="imagemPrincipal">
+
+    <!-- Miniaturas -->
+    <div class="miniaturas">
+        <img src="https://via.placeholder.com/150x100" alt="Miniatura 1" onclick="trocarImagem(this)">
+        <img src="https://via.placeholder.com/150x100/ff9999" alt="Miniatura 2" onclick="trocarImagem(this)">
+        <img src="https://via.placeholder.com/150x100/99ccff" alt="Miniatura 3" onclick="trocarImagem(this)">
+        <img src="https://via.placeholder.com/150x100/99ff99" alt="Miniatura 4" onclick="trocarImagem(this)">
+    </div>
+</div>
+
+<script>
+    // Função para trocar a imagem principal ao clicar na miniatura
+    function trocarImagem(elemento) {
+        document.getElementById("imagemPrincipal").src = elemento.src;
+    }
+</script>
+
+</body>
+</html>
