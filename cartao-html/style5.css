@@ -1,0 +1,55 @@
+body {
+    /* Cores do Tema Claro */
+    --background-color: #f4f4f9;
+    --text-color: #333333;
+    --header-footer-bg: #cccccc;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para a troca de cores */
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: var(--header-footer-bg);
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Tema Dark (Classe .dark-mode) --- */
+/* Esta classe é aplicada ao <body> pelo JavaScript */
+body.dark-mode {
+    /* Cores do Tema Escuro - Inversão das cores padrão */
+    --background-color: #1a1a2e;
+    --text-color: #e4e4e9;
+    --header-footer-bg: #33334d;
+}
+
+body.dark-mode button {
+    background-color: #e94560;
+}
+
+body.dark-mode button:hover {
+    background-color: #c03952;
+}
