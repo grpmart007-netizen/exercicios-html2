@@ -33,10 +33,10 @@ class Time{
 }
 
 
-let flamengo = new Time("Flamengo")
-flamengo.registraFimdeJogo(30,0)
+let Flamengo = new Time("Flamengo")
+Flamengo.registrarFimDeJogo(30,0)
 
-console.log(flamengo)
+console.log(Flamengo)
 
 class Partida{
     constructor(mandante, visitante){
@@ -58,3 +58,19 @@ partida.jogar(5, 6)
 
 console.log(time1)
 console.log(time2)
+
+class Campeonato{
+    constructor(){
+      this.equipes = []
+
+    }
+    adicionarTime(time){
+        this.equipes.push(time)
+    }
+    obterTabela(){
+        return this.equipes
+    }
+}
+
+let campeonato = new Campeonato()
+campeonato.adicionarTime(Flamengo)
