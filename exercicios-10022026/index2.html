@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Campeonato</title>
+<link rel="stylesheet" href="style2.css">
+</style>
+</head>
+<body>
+
+<h1> Sistema Do Campeonato Do Marciano</h1>
+
+<div class="card">
+<h3>Cadastro de Time</h3>
+<input type="text" id="nomeTime" placeholder="Nome do time">
+<button onclick="cadastrarTime()">Cadastrar</button>
+</div>
+
+<div class="card">
+<h3>Registrar Partida</h3>
+<select id="time1"></select>
+<input type="number" id="gols1" min="0" placeholder="Gols">
+
+<select id="time2"></select>
+<input type="number" id="gols2" min="0" placeholder="Gols">
+
+<button onclick="registrarPartida()">Registrar</button>
+<button class="danger" onclick="resetarCampeonato()">Resetar</button>
+</div>
+
+<div class="card">
+<h3>Classificação</h3>
+<table>
+<thead>
+<tr>
+<th>Pos</th>
+<th>Nome</th>
+<th>P</th>
+<th>V</th>
+<th>E</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody id="tabelaBody"></tbody>
+</table>
+</div>
+
+<div class="card">
+<h3> Histórico de Partidas</h3>
+<div id="historico"></div>
+</div>
+
+<script >
+let times = JSON.parse(localStorage.getItem("times")) || [];
+let partidas = JSON.parse(localStorage.getItem("partidas")) || [];
+
+function salvarDados() {
+    localStorage.setItem("times", JSON.stringify(times));
+    localStorage.setItem("partidas", JSON.stringify(partidas));
+}
+
+function cadastrarTime() {
+    const nome = document.getElementById("nomeTime").value.trim();
+    if (!nome) return alert("Digite um nome!");
+    if (times.find(t => t.nome === nome)) return alert("Time já existe!");
+
+    times.push({
+        nome,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        saldo: 0,
+        golsMarcados: 0
+    });
+
+    salvarDados();
+    atualizarTudo();
+    document.getElementById("nomeTime").value = "";
+}
+
+function atualizarSeletores() {
+    const s1 = document.getElementById("time1");
+    const s2 = document.getElementById("time2");
+
+    s1.innerHTML = "";
+    s2.innerHTML = "";
+
+    times.forEach(t => {
+        s1.add(new Option(t.nome, t.nome));
+        s2.add(new Option(t.nome, t.nome));
+    });
+}
+
+function registrarPartida() {
+    const nome1 = time1.value;
+    const nome2 = time2.value;
+    const gols1 = parseInt(document.getElementById("gols1").value);
+    const gols2 = parseInt(document.getElementById("gols2").value);
+
+    if (nome1 === nome2) return alert("Times devem ser diferentes!");
+    if (isNaN(gols1) || isNaN(gols2)) return alert("Informe os gols!");
+
+    const t1 = times.find(t => t.nome === nome1);
+    const t2 = times.find(t => t.nome === nome2);
+
+    t1.golsMarcados += gols1;
+    t2.golsMarcados += gols2;
+
+    t1.saldo += gols1 - gols2;
+    t2.saldo += gols2 - gols1;
+
+    if (gols1 > gols2) {
+        t1.pontos += 3; t1.vitorias++; t2.derrotas++;
+    } else if (gols2 > gols1) {
+        t2.pontos += 3; t2.vitorias++; t1.derrotas++;
+    } else {
+        t1.pontos++; t2.pontos++;
+        t1.empates++; t2.empates++;
+    }
+
+    partidas.push({nome1, nome2, gols1, gols2});
+
+    salvarDados();
+    atualizarTudo();
+
+    gols1.value = "";
+    gols2.value = "";
+}
+
+function confrontoDireto(a, b) {
+    let pontosA = 0;
+    let pontosB = 0;
+
+    partidas.forEach(p => {
+        if ((p.nome1 === a.nome && p.nome2 === b.nome) ||
+            (p.nome1 === b.nome && p.nome2 === a.nome)) {
+
+            if (p.gols1 === p.gols2) {
+                pontosA++; pontosB++;
+            } else if (
+                (p.nome1 === a.nome && p.gols1 > p.gols2) ||
+                (p.nome2 === a.nome && p.gols2 > p.gols1)
+            ) {
+                pontosA += 3;
+            } else {
+                pontosB += 3;
+            }
+        }
+    });
+
+    return pontosB - pontosA;
+}
+
+function atualizarTabela() {
+    times.sort((a, b) =>
+        b.pontos - a.pontos ||
+        confrontoDireto(a, b) ||
+        b.vitorias - a.vitorias ||
+        b.saldo - a.saldo ||
+        b.golsMarcados - a.golsMarcados
+    );
+
+    tabelaBody.innerHTML = "";
+
+    times.forEach((t, i) => {
+        tabelaBody.innerHTML += `
+        <tr>
+            <td>${i+1}</td>
+            <td>${t.nome}</td>
+            <td>${t.pontos}</td>
+            <td>${t.vitorias}</td>
+            <td>${t.empates}</td>
+            <td>${t.derrotas}</td>
+            <td>${t.saldo}</td>
+            <td>${t.golsMarcados}</td>
+        </tr>`;
+    });
+}
+
+function atualizarHistorico() {
+    historico.innerHTML = "";
+    partidas.slice().reverse().forEach(p => {
+        historico.innerHTML += `
+        <div class="history-item">
+             ${p.nome1} ${p.gols1} x ${p.gols2} ${p.nome2}
+        </div>`;
+    });
+}
+
+function atualizarTudo() {
+    atualizarSeletores();
+    atualizarTabela();
+    atualizarHistorico();
+}
+
+function resetarCampeonato() {
+    if (!confirm("Tem certeza que deseja resetar?")) return;
+    times = [];
+    partidas = [];
+    salvarDados();
+    atualizarTudo();
+}
+
+atualizarTudo();
+</script>
+
+</body>
+</html>

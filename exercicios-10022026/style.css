@@ -3,7 +3,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
         }
         h2 {
             text-align: center;
@@ -15,7 +14,7 @@
             margin-top: 10px;
         }
         input, select, textarea, button {
-            width: 100%;
+
             padding: 8px;
             margin-top: 5px;
             border: 1px solid #ccc;
@@ -32,3 +31,18 @@
         button:hover {
             background-color: #218838;
         }
+        table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+    select{
+        flex-direction: column;
+    }
