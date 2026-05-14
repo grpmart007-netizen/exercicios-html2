@@ -1,0 +1,29 @@
+{
+    "grupos":
+    [
+        {"grupo":"A",
+        "paises":["Coreia do Sul","México","República Tcheca","África do Sul"]},
+        {"grupo":"B",
+        "paises":["Bósnia","Canadá","Catar","Suíça"]},
+        {"grupo":"C",
+        "paises":["Brasil","Escócia","Haiti","Marrocos"]},
+        {"grupo":"D",
+        "paises":["Austrália","Estados Unidos","Paraguai","Turquia"]},
+        {"grupo":"E",
+        "paises":["Alemanha","Costa do Marfim","Curaçao","Equador"]},
+        {"grupo":"F",
+        "paises":["Holanda","Japão","Suécia","Tunísia"]},
+        {"grupo":"G",
+        "paises":["Bélgica","Egito","Irã","Nova Zelândia"]},
+        {"grupo":"H",
+        "paises":["Arábia Saudita","Cabo Verde","Espanha","Uruguai"]},
+        {"grupo":"I",
+        "paises":["França","Iraque","Noruega","Senegal"]},
+        {"grupo":"J",
+        "paises":["Argentina","Argélia","Jordânia","Áustria"]},
+        {"grupo":"K",
+        "paises":["Colômbia","Portugal","RD Congo","Uzbequistão"]},
+        {"grupo":"L",
+        "paises":["Croácia","Gana","Inglaterra","Panamá"]}
+    ]
+}
