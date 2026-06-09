@@ -1,0 +1,148 @@
+/* CARROSSEL */
+.courses-section-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin: 4rem 0;
+  width: 100%;
+  height: 40vh;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-top: 1rem;
+}
+
+.courses-section-carousel::-webkit-scrollbar {
+  height: 0.75rem;
+}
+
+.courses-section-carousel::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: var(--radius-md);
+}
+
+.course-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  flex-shrink: 0;
+}
+
+.course-card .course-frame {
+  transform: scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.course-card .course-frame {
+  position: absolute;
+  bottom: 2.5%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.course-card h3 {
+  bottom: 40%;
+  font-size: clamp(1.2rem, 1vw, 2rem);
+  font-weight: 500;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -40%);
+  width: 100%;
+  z-index: 2;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
+}
+
+.course-card:hover h3 {
+  transform: translate(-50%, 12.75vh);
+}
+
+@media (min-width: 64rem) {
+  .course-card:hover .course-thumb {
+    width: 22vw;
+    transform: scale(1.1);
+    z-index: 0;
+  }
+
+  .course-card:hover .course-frame {
+    transform: scale(1.2);
+  }
+
+  .course-card:hover .course-frame {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease-in;
+  }
+}
+
+/* IMAGEM DO CURSO */
+.course-thumb {
+  border: transparent solid 0.125rem;
+  border-image: var(--primary-gradient) 1;
+  box-shadow: 1.375rem 0.8125rem 2.4375rem -1.1875rem rgba(0, 1, 20, 0.5);
+  object-fit: cover;
+  transition: transform 0.6s ease-in-out, width 0.6s ease-in-out,
+    opacity 0.6s ease-in-out;
+  width: 20vw;
+}
+
+.course-thumb:hover {
+  transform: translateY(-0.25vh);
+}
+
+.course-card:not(:hover) .course-thumb {
+  transform: scale(1);
+  opacity: 0.7;
+  width: 18vw;
+  filter: brightness(0.5);
+}
+
+/* MEDIA QUERIES - RESPONSIVO */
+@media (max-width: 120rem) {
+  .courses-section-carousel {
+    gap: 3rem;
+    margin: 3rem 0;
+  }
+
+  .course-thumb {
+    width: 18vw;
+  }
+
+  .course-card:hover .course-thumb {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 85rem) {
+  .courses-section-carousel {
+    justify-content: start;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .course-card:not(:hover) .course-thumb {
+    width: 60vw;
+  }
+
+  .course-card:hover .course-thumb {
+    width: 65vw;
+  }
+}
+
+@media (max-width: 48rem) {
+  .courses-section-carousel {
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 25rem) {
+  .courses-section-carousel {
+    height: auto;
+    gap: 2rem;
+    margin: 1rem 0;
+  }
+}

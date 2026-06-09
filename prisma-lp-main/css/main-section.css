@@ -1,0 +1,188 @@
+/* MAIN CONTAINER */
+.main-container {
+  width: 100%;
+  height: 100vh;
+  place-items: center;
+  overflow: hidden;
+}
+
+.main-container .courses-row {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* BACKGROUND DE VÍDEO */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.75) blur(0.25rem);
+  will-change: transform;
+}
+
+/* HERO SECTION */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-section aside {
+  max-width: 56rem;
+  margin-top: 5rem;
+}
+
+.hero-section aside .hero-primary-sentence {
+  width: 100%;
+  font-family: var(--fira-condensed);
+  font-weight: 400;
+  font-size: 5.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.875rem;
+  max-width: 800px;
+}
+
+.hero-section aside .hero-primary-sentence span {
+  font-weight: 700;
+}
+
+.hero-section aside .hero-secondary-sentence {
+  font-size: 3rem;
+  margin-bottom: 2.25rem;
+  line-height: 175%;
+}
+
+.hero-section .main-hero {
+  height: 85vh;
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  filter: drop-shadow(1.125rem 0.3125rem 1.875rem rgba(0, 1, 20, 0.5));
+  will-change: transform;
+  z-index: -1;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Laptops grandes (até 1920px) */
+@media (max-width: 120rem) {
+  .hero-section {
+    gap: 5rem;
+  }
+
+  .hero-section aside {
+    max-width: 45rem;
+    margin-top: 4rem;
+  }
+
+  .hero-section aside .hero-primary-sentence {
+    font-size: 4.125rem;
+  }
+
+  .hero-section aside .hero-secondary-sentence {
+    font-size: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-section .main-hero {
+    height: 80vh;
+  }
+}
+
+/* Laptops médios (até 1366px) */
+@media (max-width: 85.4rem) {
+  .hero-section {
+    gap: 4rem;
+  }
+
+  .hero-section aside {
+    max-width: 37.5rem;
+    margin-top: 3rem;
+  }
+
+  .hero-section aside .hero-primary-sentence {
+    font-size: 3rem;
+  }
+
+  .hero-section aside .hero-secondary-sentence {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-section .main-hero {
+    height: 70vh;
+  }
+}
+
+/* Tablets (até 1024px) */
+@media (max-width: 64rem) {
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-section aside {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .hero-section aside .hero-primary-sentence {
+    font-size: 3rem;
+  }
+
+  .hero-section .main-hero {
+    max-height: 60vh;
+    height: 100%;
+  }
+}
+
+/* Celulares médios (até 768px) */
+@media (max-width: 48rem) {
+  .hero-section aside {
+    max-width: 100%;
+  }
+
+  .hero-section aside .hero-primary-sentence {
+    font-size: 2rem;
+  }
+
+  .hero-section aside .hero-secondary-sentence {
+    font-size: 1rem;
+  }
+
+  .hero-section .main-hero {
+    max-height: 50vh;
+    right: 0;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 26rem) {
+  .hero-section aside .hero-primary-sentence {
+    font-size: 1.5rem;
+  }
+
+  .hero-section aside .hero-secondary-sentence {
+    font-size: 0.9rem;
+  }
+
+  .hero-section .main-hero {
+    max-height: 40vh;
+    right: 0;
+  }
+}
+
+@media (max-width: 20rem) {
+  .hero-section .main-hero {
+    display: none;
+  }
+}

@@ -1,0 +1,255 @@
+/* HERO */
+.about-us-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  min-height: 70vh;
+  border-radius: var(--radius-lg);
+  margin: 8rem 0 4rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.about-us-hero {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 80vh;
+  filter: drop-shadow(1.125rem 0.3125rem 1.875rem rgba(0, 1, 20, 0.5));
+  transition: filter 0.2s ease;
+}
+
+.about-us-text {
+  max-width: 45vw;
+}
+
+.about-us-text h3 {
+  font-size: clamp(1.6rem, 4.4vw, 5rem);
+  font-weight: bold;
+  font-family: var(--open-sans);
+  text-transform: uppercase;
+}
+
+.about-us-text p {
+  font-size: clamp(1.2rem, 2vw, 3rem);
+  font-family: var(--fira-condensed);
+  margin: 2rem 0;
+}
+
+.about-us-container .courses-row {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 30, 107, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9990;
+}
+
+.popup-content {
+  background: var(--primary-gradient);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  position: relative;
+  height: 95vh;
+}
+
+.popup video {
+  border-radius: 5px;
+  height: 100%;
+  max-width: 90vw;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 18px;
+  background: rgba(45, 30, 107, 1);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50px;
+  transition: background 0.3s ease-in, transform 0.2s ease-in,
+    color 0.2s ease-in;
+  cursor: pointer;
+  z-index: 9991;
+}
+
+.close-btn:hover {
+  color: red;
+  background: var(--foreground);
+  transform: translateY(-2px);
+}
+
+.about-us-glide {
+  position: relative;
+  margin: 4rem 0;
+
+  @media(max-width: 1440px) {
+    margin: 3.2rem 0;
+  }
+
+  @media(max-width: 1024px) {
+    margin: 2.6rem 0;
+  }
+
+  @media(max-width: 768px) {
+    margin: 2.1rem 0;
+  }
+
+  @media(max-width: 425px) {
+    margin: 1.6rem 0;
+  }
+}
+
+.about-us-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-card img {
+  height: 16rem;
+  width: 90%;
+  object-fit: cover;
+  border: transparent solid 0.125rem;
+  border-image: var(--primary-gradient) 1;
+  box-shadow: 1.375rem 0.8125rem 2.4375rem -1.1875rem rgba(0, 1, 20, 0.5);
+
+  @media (max-width: 1024px) {
+    height: auto;
+  }
+}
+
+.about-us-card p {
+  margin-top: 0.5rem;
+  max-width:  90%;
+}
+
+.about-us-card p span {
+  font-weight: 600;
+}
+
+@media (max-width: 120rem) {
+  .about-us-text {
+    width: 40vw;
+    left: 0;
+  }
+
+  .about-us-text {
+    max-width: 70vw;
+  }
+
+  .about-us-text p {
+    margin: 1.6rem 0;
+  }
+}
+
+@media (max-width: 85rem) {
+  .about-us-container {
+    margin: 3rem 0 3.6rem;
+    flex-direction: column-reverse;
+    justify-content: start;
+    height: auto;
+    min-height: 70vh;
+    overflow: hidden;
+  }
+
+  .about-us-hero {
+    width: 60%;
+    max-width: 60vw;
+    height: auto;
+    left: 20%;
+    position: relative;
+  }
+
+  .about-us-text {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 64rem) {
+  .about-us-container {
+    height: auto;
+    min-height: auto;
+  }
+
+  .about-us-hero {
+    width: 80%;
+    max-width: 80vw;
+    left: 10%;
+  }
+
+  .about-us-text p {
+    margin: 1.2rem 0;
+  }
+}
+
+@media (max-width: 48rem) {
+  .about-us-container {
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .about-us-hero {
+    width: 90%;
+    max-width: 90%;
+    left: 5%;
+  }
+
+  .about-us-text {
+    text-align: center;
+  }
+
+  .about-us-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-us-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 26rem) {
+  .about-us-container {
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .about-us-hero {
+    width: 95%;
+    max-width: 95%;
+    left: 2.5%;
+  }
+
+  .about-us-text h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 20rem) {
+  .about-us-container {
+    margin: 1rem 0;
+  }
+
+  .about-us-hero {
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+  }
+}
+

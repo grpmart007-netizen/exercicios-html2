@@ -1,0 +1,31 @@
+:root {
+  /* FONT-FAMILY */
+  --fira-sans: "Fira Sans", sans-serif;
+  --fira-condensed: "Fira Sans Condensed", sans-serif;
+  --open-sans: "Open Sans", sans-serif;
+
+  /* COLORS */
+  --foreground: #fff;
+  --background: linear-gradient(
+    40deg,
+    rgba(45, 30, 107, 1) 0%,
+    rgba(81, 24, 122, 1) 20%,
+    rgba(57, 29, 112, 1) 45%,
+    rgba(81, 24, 122, 1) 70%,
+    rgba(50, 30, 109, 1) 85%,
+    rgba(45, 30, 107, 1) 100%
+  );
+  --primary-gradient: linear-gradient(
+    40deg,
+    rgba(93, 63, 239, 1) 0%,
+    rgba(158, 118, 227, 1) 40%,
+    rgba(168, 98, 255, 1) 45%,
+    rgba(168, 98, 255, 1) 55%,
+    rgba(255, 34, 224, 1) 65%,
+    rgba(152, 0, 126, 1) 100%
+  );
+
+  /* BORDER-RADIUS */
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+}

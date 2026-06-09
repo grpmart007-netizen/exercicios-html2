@@ -1,0 +1,193 @@
+/* ========== BASE ========== */
+.hidden {
+  display: none !important;
+}
+
+/* ========== HEADER ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+header .logo-site {
+  transition: transform 0.2s ease-in-out;
+  filter: drop-shadow(1.125rem 0.3125rem 1.875rem rgba(0, 1, 20, 1));
+}
+
+header .logo-site img {
+  height: 3.25rem;
+}
+
+header .logo-site:hover {
+  transform: translateY(-0.125rem);
+}
+
+header hr {
+  display: none;
+}
+
+/* Navegação principal */
+header nav ul {
+  display: flex;
+  gap: 2.5rem;
+  text-transform: uppercase;
+}
+
+header nav ul .link {
+  z-index: 9999;
+}
+
+header nav ul li img {
+  display: none;
+}
+
+/* Container do menu mobile */
+.menu-container {
+  position: relative;
+  display: none;
+  z-index: 10001;
+}
+
+.menu-container .hamburger-menu,
+.menu-container .close-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.menu-container .hamburger-menu img,
+.menu-container .close-menu img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* --- Telas maiores (≥ 768px) --- */
+@media (min-width: 48.0625rem) {
+  header .nav-links {
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}
+
+/* --- Notebooks e telas médias (≤ 1366px) --- */
+@media (max-width: 85.4rem) {
+  header .logo-site img {
+    height: 2.5rem;
+  }
+
+  header nav ul .link {
+    font-size: 1.3125rem;
+  }
+}
+
+/* --- Tablets (≤ 1024px) --- */
+@media (max-width: 64rem) {
+  header {
+    margin: 0;
+  }
+
+  header .logo-site img {
+    height: 2rem;
+  }
+
+  header nav ul {
+    gap: 1.25rem;
+  }
+
+  header nav ul .link {
+    font-size: 1.125rem;
+  }
+}
+
+/* --- Tablets pequenos / Celulares grandes (≤ 768px) --- */
+@media (max-width: 48rem) {
+  header .menu-container {
+    display: flex;
+  }
+
+  header .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5rem 2rem 2rem;
+    border-radius: 0;
+    z-index: 10000;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
+    background: rgba(10, 15, 30, 0.18);
+
+    /* Transição suave */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  header .nav-links hr {
+    display: block;
+    border: 0.1rem solid var(--foreground);
+    border-radius: var(--radius-md);
+    margin: 0 0 2rem;
+  }
+
+  header .nav-links ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  header .nav-links ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .nav-links ul li img {
+    height: 1.2rem;
+    display: block;
+  }
+
+  header .nav-links .link {
+    font-size: 1.6rem;
+  }
+}
+
+/* --- Celulares pequenos (≤ 425px) --- */
+@media (max-width: 26.5625rem) {
+  header .logo-site img {
+    height: 1.75rem;
+  }
+
+  header .nav-links .link {
+    font-size: 1.4rem;
+  }
+}
+
+/* Esconde o conteúdo da hero section quando o menu mobile estiver ativo */
+/* Isso evita conflito de stacking context com elementos que têm transform */
+@media (max-width: 48rem) {
+  header .nav-links.active ~ .hero-section,
+  body:has(.nav-links.active) .hero-section aside,
+  body:has(.nav-links.active) .main-container .btn-container {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,119 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--fira-sans);
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+section {
+  width: 100%;
+  max-width: 100vw;
+  padding: 2rem 6rem;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-family: var(--fira-condensed);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 3rem;
+}
+
+hr {
+  width: 95%;
+  max-width: 95vw;
+  border-color: #ccc;
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 120rem) {
+  section {
+    width: 100%;
+    padding: 2rem 5rem;
+  }
+}
+
+@media (max-width: 85.4rem) {
+  section {
+    width: 100%;
+    padding: 2rem 4rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  section {
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
+
+@media (max-width: 26rem) {
+  section {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 20rem) {
+  section {
+    width: 100%;
+    padding: 0.75rem 0.75rem;
+  }
+}
+
+/* SMOOTH LOADING */
+/* Inicialmente ocultando e deslocando os elementos */
+header {
+  opacity: 0;
+  transform: translateY(-6.25rem); /* -100px */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hero-section aside {
+  opacity: 0;
+  transform: translateX(-6.25rem); /* -100px */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hero-section .main-hero {
+  opacity: 0;
+  transform: translateX(6.25rem); /* 100px */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Após a página ser carregada */
+body.loaded header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.loaded .hero-section aside {
+  opacity: 1;
+  transform: none; /* Usando 'none' ao invés de 'translateX(0)' para não criar stacking context */
+}
+
+body.loaded .hero-section .main-hero {
+  opacity: 1;
+  transform: translateX(0);
+}

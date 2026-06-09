@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrismaTech Code Academy</title>
+  <link rel="icon" type="image/png" href="assets/icons/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Essa tag importa a fontes do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Adicione o CSS do Glide.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css" />
+</head>
+
+<body>
+  <!-- MAIN SECTION -->
+  <section class="main-container">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="./assets/videos/heroVideo.webm" type="video/webm" />
+      Seu navegador não suporta vídeo.
+    </video>
+    <header>
+      <a class="logo-site" href="/">
+        <h1>
+          <img src="assets/img/logo.png" alt="Logo principal do site" />
+        </h1>
+      </a>
+
+      <div class="menu-container">
+        <button class="hamburger-menu" aria-label="Abrir Menu">
+          <img src="assets/icons/menu.png" alt="Ícone abrir de menu" />
+        </button>
+
+        <button class="close-menu hidden" aria-label="Fechar Menu">
+          <img src="assets/icons/close.png" alt="Ícone de fechar menu" />
+        </button>
+      </div>
+
+      <nav class="nav-links">
+        <hr />
+        <ul>
+          <li>
+            <a id="about-link" class="link" href="#about">Sobre nós
+              <img src="assets/icons/arrow.png" alt="Ícone de seta" /></a>
+          </li>
+          <li>
+            <a class="link" href="#courses">Cursos <img src="assets/icons/arrow.png" alt="Ícone de seta" /></a>
+          </li>
+          <li>
+            <a class="link" href="#projects">Projetos
+              <img src="assets/icons/arrow.png" alt="Ícone de seta" /></a>
+          </li>
+          <li>
+            <a class="link" href="#testimonials">Depoimentos
+              <img src="assets/icons/arrow.png" alt="Ícone de seta" /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero-section">
+      <aside>
+        <h2 class="hero-primary-sentence">
+          Um novo conceito em <br /><span>educação e entretenimento</span>
+        </h2>
+        <p class="hero-secondary-sentence">
+          Seja um proplayer, um programador ou um designer de sucesso. As
+          profissões do futuro aqui são o presente.
+        </p>
+        <div class="btn-container">
+          <button onclick="enviarMensagemDeWhatsapp('conheca-sobre-nos')" class="filled-btn">
+            <span>Conheça já!</span>
+          </button>
+          <button onclick="enviarMensagemDeWhatsapp('inscreva-se')" class="unfilled-btn">
+            <span>Inscreva-se</span>
+          </button>
+        </div>
+      </aside>
+
+      <img class="main-hero" src="assets/img/main-hero.png" alt="Imagem de hero" />
+    </div>
+
+    <div class="glass-bg courses-row">
+      <div class="marquee-container"></div>
+    </div>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section class="courses-section-container">
+    <div class="section-greetings">
+      <h2 id="courses">
+        Alcance um <br />
+        <span class="gradient-text">nível</span> superior
+      </h2>
+      <p>Sua educação para o futuro aliando jogos e diversão.</p>
+    </div>
+
+    <!-- ############### CAROUSEL DE CURSOS ############### -->
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow course left">
+        <img src="assets/icons/arrow.png" alt="Flecha para a esquerda" />
+      </button>
+
+      <div class="courses-section-carousel" id="course-carousel">
+        <!-- Cards aqui -->
+      </div>
+
+      <button class="carousel-arrow course right">
+        <img src="assets/icons/arrow.png" alt="Flecha para a direita" />
+      </button>
+    </div>
+
+    <div class="btn-container">
+      <button onclick="enviarMensagemDeWhatsapp('todos-os-cursos')" class="filled-btn">
+        <span>Todos os cursos</span>
+      </button>
+      <button onclick="enviarMensagemDeWhatsapp('conheca-mais-cursos')" class="unfilled-btn">
+        <span>Conheça mais</span>
+      </button>
+    </div>
+  </section>
+  <hr />
+
+  <section>
+    <div class="section-greetings">
+      <h2 id="about">Sobre <span class="gradient-text">nós</span></h2>
+      <p>
+        Somos uma empresa apaixonada por tecnologia, inovação, educação e
+        entretenimento.
+      </p>
+    </div>
+
+    <!-- ### CARROSSEL DE IMAGENS DA EMPRESA ### -->
+    <div class="about-us-glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides" id="about-us-list"></ul>
+      </div>
+
+      <!-- Controles -->
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          &#10094;
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          &#10095;
+        </button>
+      </div>
+
+      <!-- Paginação -->
+      <div class="glide__bullets" data-glide-el="controls[nav]" id="glide-bullets"></div>
+    </div>
+    <div class="glass-bg about-us-container">
+      <img class="about-us-hero" src="assets/img/about-us.png" alt="Imagem de hero de seção de cursos" />
+
+      <div class="about-us-text">
+        <h3>
+          Conheça um
+          <span class="gradient-text">mundo</span> novo e vibrante
+        </h3>
+        <p>
+          A educação aliada ao entretenimento é uma das mais poderosas
+          ferramentas de transformação pessoal e profissional.
+        </p>
+
+        <!-- Botão para abrir Popup -->
+        <button class="unfilled-btn" onclick="openPopup()">
+          <span>Veja o vídeo</span>
+        </button>
+      </div>
+    </div>
+    <!-- Popup -->
+    <div class="popup" id="videoPopup">
+      <div class="popup-content">
+        <button class="close-btn" onclick="closePopup()">✖</button>
+        <video id="popupVideo" controls>
+          <source src="assets/videos/prisma-institucional.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeos.
+        </video>
+      </div>
+    </div>
+
+    <!-- COURSES MARQUEE -->
+    <div class="glass-bg courses-row">
+      <div class="marquee-container" id="marquee-content"></div>
+    </div>
+  </section>
+
+  <!-- PROJECT SECTION -->
+  <section class="project-section-container">
+    <div class="section-greetings">
+      <h2 id="projects">Projetos dos <span class="gradient-text">alunos</span></h2>
+      <p>
+        Nossos alunos desenvolvem projetos para aprimorar suas habilidades e
+        conhecimentos em diversas tecnologias.
+      </p>
+    </div>
+
+    <!-- Filtro de projetos dos alunos -->
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow project-filters left">
+        <img src="assets/icons/arrow.png" alt="Flecha para a esquerda" />
+      </button>
+
+      <div class="project-filter" id="project-filter"></div>
+
+      <button class="carousel-arrow project-filters right">
+        <img src="assets/icons/arrow.png" alt="Flecha para a direita" />
+      </button>
+    </div>
+
+    <!-- Container vai agrupar os projetos -->
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow project left">
+        <img src="assets/icons/arrow.png" alt="Flecha para a esquerda" />
+      </button>
+
+      <ul class="project-card-container" id="projects-list"></ul>
+
+      <button class="carousel-arrow project right">
+        <img src="assets/icons/arrow.png" alt="Flecha para a direita" />
+      </button>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="testimonials-section-container">
+    <h2 id="testimonials">Depoimentos dos <span class="gradient-text">alunos</span></h2>
+    <div class="testimonial-glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides" id="testimonials-list"></ul>
+      </div>
+
+      <!-- Controles -->
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          &#10094;
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          &#10095;
+        </button>
+      </div>
+
+      <!-- Paginação -->
+      <div class="glide__bullets" data-glide-el="controls[nav]" id="glide-bullets"></div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ DO SITE -->
+  <footer>
+    <!-- COURSES MARQUEE -->
+    <div class="glass-bg courses-row">
+      <div class="marquee-container" id="marquee-content"></div>
+    </div>
+
+    <section class="footer-container">
+      <div class="footer-presentation">
+        <img src="assets/img/logo.png" alt="Logo da Prisma Treinamentos" />
+        <p>
+          Somos uma empresa apaixonada por tecnologia, inovação, educação e
+          entretenimento. Venha fazer parte dessa fascinante jornada.
+        </p>
+      </div>
+
+      <div class="companies-logos">
+        <img src="assets/img/twitch.png" alt="Logo da Twitch" />
+        <img src="assets/img/roblox.png" alt="Logo do Roblox" />
+        <img src="assets/img/asus.png" alt="Logo da Asus" />
+        <img src="assets/img/canon.png" alt="Logo da Canon" />
+        <img src="assets/img/microsoft.png" alt="Logo da Microsoft.png" />
+      </div>
+
+      <div class="contact-container">
+        <a href="https://www.instagram.com/tech_prisma/" target="_blank">
+          <img src="assets/img/instagram.png" alt="Logo do Instagram" />
+        </a>
+        <a href="https://github.com/Prisma-Tech-Brasil" target="_blank">
+          <img src="assets/img/github.png" alt="Logo do Github" />
+        </a>
+        <span id="copyright">
+          © Copyright PrismaTech Code Academy<span id="year"></span>. Todos os
+          direitos reservados.
+        </span>
+      </div>
+    </section>
+  </footer>
+
+  <script src="script.js" type="module" defer></script>
+
+  <!-- Chat Widget é criado dinamicamente via JavaScript -->
+
+  <!-- Import do JS do Glide.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+</body>
+
+</html>

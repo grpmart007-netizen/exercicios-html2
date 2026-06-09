@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: var(--foreground);
+}
+
+body {
+  user-select: none;
+}
+
+header {
+  user-select: none;
+}

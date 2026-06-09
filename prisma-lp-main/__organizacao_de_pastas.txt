@@ -1,0 +1,61 @@
+📁 Organização de Pastas para a Landing Page
+
+Esta documentação detalha a estrutura de pastas recomendada para organizar os arquivos da landing page de forma eficiente.
+
+
+🌲 Estrutura de Diretórios
+/projeto-landing-page
+│── index.html          # Página principal
+│── style.css           # Estilos principais (importa outros CSS)
+│── script.js           # Código principal do JavaScript
+│
+├── /assets             # Arquivos estáticos
+│   ├── /img            # Imagens do site
+│   ├── /fonts          # Fontes personalizadas
+│   ├── /icons          # Ícones SVG ou PNG
+│   ├── /videos         # Vídeos usados na página
+│
+├── /css                # Estilos organizados por categoria
+│   ├── reset.css       # Reset/normalização de estilos
+│   ├── variables.css   # Variáveis globais (cores, fontes, espaçamentos)
+│   ├── components.css  # Estilos de componentes reutilizáveis (botões, cards)
+│   ├── layout.css      # Estrutura da página (grid, flexbox, seções)
+│   ├── animations.css  # Animações e transições
+│
+├── /js                 # Scripts separados por funcionalidade
+│   ├── script.js       # Código principal
+│   ├── animations.js   # Efeitos e transições
+│   ├── video-handler.js # Controle de vídeos
+
+
+📌 Descrição das Pastas
+/assets
+• img/ → Todas as imagens do site (JPEG, PNG, SVG, WebP).
+• fonts/ → Fonte baixada caso necessário.
+• icons/ → Ícones utilizados no site.
+• videos/ → Vídeos usados na landing page.
+
+/css
+• reset.css → Remove estilos padrões do navegador para evitar inconsistências.
+• variables.css → Define cores, fontes e espaçamentos como variáveis.
+• components.css → Contém estilos de botões, inputs e elementos reutilizáveis.
+• layout.css → Gerencia a estrutura geral da página.
+• animations.css → Define animações e transições CSS.
+
+/js
+• script.js → Script principal da página.
+• animations.js → Gerencia efeitos de rolagem, fades e transições.
+• video-handler.js → Controla os vídeos na página.
+
+
+🎨 Importando Google Fonts
+
+Adicione no <head> do HTML:
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+E no CSS:
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+Com essa estrutura, a landing page ficará organizada e fácil de manter! 🚀

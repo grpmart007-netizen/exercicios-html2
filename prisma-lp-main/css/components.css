@@ -1,0 +1,368 @@
+/* =============================================
+  🎨  VARIÁVEIS E EFEITOS GLOBAIS
+============================================= */
+
+/* Carousel Arrows */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 85rem) {
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  padding: 0.6rem 0.7rem;
+  z-index: 3;
+  transition: border-color 0.3s ease;
+}
+
+.carousel-arrow img {
+  height: 0.75rem;
+}
+
+.carousel-arrow.left {
+  left: 0.5rem;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.carousel-arrow.right {
+  right: 0.5rem;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--foreground);
+}
+
+/* Glassmorphism */
+.glass-bg {
+  background: rgba(164, 164, 164, 0.21);
+  box-shadow: 1.375rem 0.8125rem 2.4375rem -1.1875rem rgb(0, 1, 20, 0.5);
+  backdrop-filter: blur(0.425rem);
+  -webkit-backdrop-filter: blur(0.425rem);
+  border: 0.0625rem solid rgba(164, 164, 164, 0.3);
+}
+
+/* Container para Saudações */
+.section-greetings {
+  text-align: center;
+  max-width: 54rem;
+}
+
+.section-greetings p {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  line-height: 125%;
+}
+
+/* Texto com gradiente animado */
+.gradient-text {
+  position: relative;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s ease;
+  animation: gradientAnimation 5s infinite, transformAnimation 5s infinite;
+}
+
+.gradient-text:hover {
+  transform: translateY(-1vh);
+}
+
+.gradient-text::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+}
+
+/* Link com sublinhado animado */
+.link {
+  font-family: var(--fira-condensed);
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.2rem;
+    background-color: var(--foreground);
+    bottom: -0.4rem;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+/* =============================================
+  🔘 BOTÕES (Com e Sem Preenchimento)
+============================================= */
+
+/* Botão preenchido com gradiente */
+.filled-btn {
+  box-shadow: 1.375rem 0.8125rem 2.4375rem -1.1875rem rgb(0, 1, 20, 0.5);
+  width: 15vw;
+  height: 3.2rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--open-sans);
+  text-transform: uppercase;
+  background: var(--primary-gradient);
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: skew(-20deg);
+  cursor: pointer;
+  background-size: 100% 100%;
+  transition: background-position 0.1s ease-in-out, 0.5s ease-in-out, background-size 0.5s ease-in-out;
+  min-width: 10rem;
+  min-height: 2.5rem;
+
+  span {
+    transform: skew(20deg);
+  }
+
+  &:hover {
+    transform: skew(-20deg) translateY(-0.5vh);
+    background-size: 300% 300%;
+    background-position: 100% 100%;
+  }
+
+  @media (max-width: 1540px) {
+    width: 16vw; height: 2.8rem; font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 14vw; height: 2.4rem; font-size: 0.75rem;
+  }
+
+  @media (max-width: 475px) {
+    width: 12vw; height: 2rem; font-size: 0.65rem;
+  }
+}
+
+/* Botão vazado com gradiente */
+.unfilled-btn {
+  box-shadow: 1.375rem 0.8125rem 2.4375rem -1.1875rem rgb(0, 1, 20, 0.5);
+  width: 15vw;
+  height: 3.2rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--open-sans);
+  text-transform: uppercase;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: skew(-20deg);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.1s ease-in-out;
+  min-width: 10rem;
+  min-height: 2.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 0.25rem;
+    background: var(--primary-gradient);
+    mask: linear-gradient(white, white);
+    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    background-size: 100% 100%;
+    transition: background-position 0.5s ease-in-out, background-size 0.5s ease-in-out;
+  }
+
+  span {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+    position: relative;
+    transform: skew(20deg);
+    transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+  }
+
+  &:hover {
+    transform: skew(-20deg) translateY(-0.5vh);
+
+    &::before {
+      background-size: 200% 200%;
+      background-position: 100% 100%;
+    }
+
+    span {
+      background-size: 200% 200%;
+      background-position: 100% 100%;
+    }
+  }
+
+  @media (max-width: 1540px) {
+    width: 16vw; height: 2.8rem; font-size: 1.125rem;
+
+    &::before {
+      padding: 0.15rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 14vw; height: 2.4rem; font-size: 1rem;
+  }
+
+  @media (max-width: 475px) {
+    width: 12vw; height: 2rem; font-size: 0.75rem;
+  }
+}
+
+/* Container de botões especiais */
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (max-width: 64rem) {
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  @media (max-width: 48rem) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 29.7rem) {
+    gap: 1.5rem;
+  }
+}
+
+/* =============================================
+  📚 CURSOS (Esteira)
+============================================= */
+
+.courses-row {
+  padding: 1.6875rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100vw;
+
+  .marquee-container {
+    display: flex;
+    gap: 3rem;
+    width: 200%;
+    align-items: center;
+    animation: marquee 90s linear infinite;
+  }
+
+  p {
+    font-size: 1.875rem;
+    font-family: var(--open-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  img {
+    height: auto;
+  }
+}
+
+/* Responsividade da esteira */
+@media (max-width: 96.25rem) {
+  .courses-row {
+    padding: 1.125rem 0;
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    img {
+      height: 1.75rem;
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  .courses-row {
+    padding: 1rem 0;
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    img {
+      height: 1.5rem;
+
+      .marquee-container {
+        animation-duration: 20s;
+      }
+    }
+  }
+}
+
+@media (max-width: 29.7rem) {
+  .courses-row {
+    padding: 0.875rem 0;
+
+    p {
+      font-size: 1rem;
+    }
+
+    img {
+      height: 1.25rem;
+    }
+
+    .marquee-container {
+      animation-duration: 7s;
+    }
+  }
+}
+
+/* Keyframes */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes gradientAnimation {
+  0%, 50%, 100% {
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+  }
+  25%, 75% {
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes transformAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1vh); }
+}

@@ -1,0 +1,11 @@
+import "./js/script.js";
+import "./js/animations.js";
+import "./js/automaticCopyrightDate.js";
+import "./js/coursesCarousel.js";
+import "./js/filterButtons.js";
+import "./js/handleNavLinks.js";
+import "./js/renderAboutUsImgs.js";
+import "./js/renderProjects.js";
+import "./js/renderTestimonials.js";
+import "./js/handlePopup.js";
+import "./js/chatWidget.js";

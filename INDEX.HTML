@@ -7,34 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
     <header>
-    <h1>⚽ Bolão Copa do Mundo 2026</h1>
-
-    <div class="toggle">
-      <button id="btnUsuario">Usuário</button>
-      <button id="btnAdmin">Administrador</button>
+        <img src="prisma-lp-main/assets/icons/menu.png" alt="">
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Bem-vindo ao nosso site!</h1>
+        <p>Esta é a Prisma Tech, empresa de tecnologia.</p>
+        <button>Saiba mais</button>
+    </section>
+    <div class="servicos">
+        <h2>Serviços e Cursos</h2>
+        <p>Gta - Curso de aprendizado sobre hardeware e software dos aparelhos tecnologicos</p>
+        <p>fullstack - aprendizado sobre mexer com desenvolvimento web.</p>     
     </div>
-
-    <h2 id="pontuacao">Pontuação: 0</h2>
-  </header>
-  <main id="containerJogos">
-    <div></div>
-    <section></section>
-  </main>
-  <template>
-    <div class="jogo">
-      <h3></h3>
-      <div class="times">
-        <span class="time"></span>
-        <span class="x">X</span>
-        <span class="time"></span>
-      </div>
-      <input type="number" min="0" max="10" value="0">
-      <input type="number" min="0" max="10" value="0">
-      <button>Confirmar</button>
+    <div class="sobre">
+        <h2>Sobre nós</h2>
+        <p>Somos uma empresa de tecnologia dedicada a fornecer soluções inovadoras para nossos clientes. Com uma equipe de especialistas em diversas áreas, estamos comprometidos em entregar produtos e serviços de alta qualidade que atendam às necessidades do mercado.</p>  
     </div>
-  </template>
+    <section class="depoimentos">
+        <h2>Depoimentos</h2>
+        <p>Veja o que nossos clientes dizem sobre nossos serviços.</p>
+        <form action="#">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
 </body>
- <script src="script.js"></script>
-</html>
+<footer>
+        <p>&copy; 2024 Prisma Tech. Todos os direitos reservados.</p>
+</footer>
+</html> 
