@@ -16,16 +16,22 @@ body{
 
 #titulo{
     text-align: center;
+    
     background-color: rgb(0, 0, 0);
     color: aliceblue;
-
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
 }
 #conteudo{
     height: 90vh;
     display: flex;
-    align-items: center;
+    align-items: end;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
 }
-#secction{
+#section{
     width: 50%;
     padding: 20px;
     justify-content: space-between;
@@ -34,4 +40,48 @@ body{
     flex-wrap: wrap;
     margin-left: 50px;
     padding: 20px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    margin: 50px;
+    padding: 20px;
+}
+.servicos{
+    display: flex;
+    justify-content:  space-around;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+}
+.sobre{
+    display: flex;
+    justify-content:  right;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(255, 65, 245);
+    color: aliceblue;
+}
+.depoimentos{
+    display: flex;
+    justify-content:  space-around;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(255, 65, 245);
+    color: aliceblue;
+}
+#nav{
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+    width: 100%;
+    
+}
+footer{
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
 }
