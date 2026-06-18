@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: var(--foreground);
+}
+
+body {
+  user-select: none;
+}
+
+header {
+  user-select: none;
+}
+
 body{
     background-color: rgb(197, 154, 255);
     background-image: url( about-us.png);
@@ -84,4 +108,135 @@ footer{
     color: aliceblue;
     text-align: center;
     padding: 10px;
+}
+footer {
+  background-image: url("../assets/img/footer-banner.png");
+  background-position: right top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #ff35ff;
+  height: 85vh;
+  width: 100vw;
+}
+
+.footer-container {
+  font-family: var(--open-sans);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  height: 80%;
+  margin: 1rem 3rem;
+}
+
+.footer-presentation img {
+  width: 15.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.footer-presentation p {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+
+.companies-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  margin: 3.65rem 0;
+}
+
+.companies-logos img {
+  height: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-container span {
+  margin-left: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.contact-container a:hover {
+  transform: translateY(-0.15rem);
+  transition: transform 0.2s ease;
+}
+
+.contact-container img {
+  height: 2rem;
+}
+
+/* Responsividade para Notebooks   */
+@media (max-width: 85rem) {
+  .footer-container {
+    margin: 1rem 2rem;
+  }
+
+  .footer-presentation img {
+    width: 13rem;
+  }
+
+  .footer-presentation p {
+    max-width: 18rem;
+    font-size: 0.95rem;
+  }
+
+  .companies-logos {
+    gap: 2rem;
+  }
+
+  .companies-logos img {
+    height: 1.8rem;
+  }
+
+  .contact-container {
+    gap: 0.5rem;
+  }
+
+  .contact-container span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  footer {
+    background-position: right center;
+    background-size: auto 100%;
+  }
+
+  .footer-container {
+    margin: 1rem 1rem;
+  }
+
+  .footer-presentation p {
+    max-width: 24rem;
+  }
+
+  .companies-logos {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  .companies-logos img {
+    height: 1.6rem;
+  }
+
+  .contact-container span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 20rem) {
+  footer {
+    height: 130vh;
+  }
+
+  .footer-container {
+    margin: 1rem 0.5rem;
+  }
 }
