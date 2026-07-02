@@ -7,7 +7,7 @@ let textoTempo = document.getElementById("hora");
 let botaoIniciar = document.getElementById("botao");
 let botaoResetar = document.getElementById("botao2");
 
-let tempo = 25 * 60; // 25 minutos em segundos
+let tempo = 1 * 3; // 25 minutos em segundos
 
 let ativo = false;
 let id
@@ -19,11 +19,30 @@ function diminuirTempo() {
     let segundos = tempo % 60;
     textoTempo.innerText = minutos + ":" + segundos;
     if (tempo <= 0) {
+        
+        
+        console.log("O tempo acabou!");
+        document.body.style.backgroundColor = "red";
         clearInterval(id);
         ativo = false;
         botaoIniciar.value = "Iniciar";
-        alert("O tempo acabou!");
+        
+        
+        const Texto = document.getElementById("texto");
+        
+        // Adiciona a classe que faz piscar
+        Texto.classList.add("piscar");
+        
+        // Espera o tempo total da animação (0.5s * 3 = 1.5s)
+        setTimeout(() => {
+            alert("O tempo acabou!");
+        }, 1500);
+     
+      
+     
+     
     }
+
     
 }
 
@@ -53,6 +72,14 @@ botaoResetar.addEventListener("click", function() {
    
 
 });
+
+
+
+
+
+
+
+
 
 
 

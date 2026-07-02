@@ -8,8 +8,11 @@ div{
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-color: #835500;
 
+}
+
+body{
+    background-color: #835500;
 }
 button:hover{
     padding: 10px 20px;
@@ -20,3 +23,11 @@ button:hover{
     cursor: pointer;
     border-radius: 5px;
 }
+
+.piscar {
+    animation: piscar 0.5s linear 3; /* 0.5s por ciclo, repete 3 vezes */
+  }
+  @keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
