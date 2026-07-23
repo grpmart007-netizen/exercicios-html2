@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário com Cartão de Crédito Visual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cartão visual -->
+<div class="card-visual">
+    <div class="card-number" id="display-number">#### #### #### ####</div>
+    <div class="card-footer">
+        <div class="card-holder">
+            <strong>Titular</strong><br>
+            <span id="display-name">NOME DO TITULAR</span>
+        </div>
+        <div class="card-validity">
+            <strong>Validade</strong><br>
+            <span id="display-validity">MM/AA</span>
+        </div>
+    </div>
+</div>
+
+<!-- Formulário -->
+<form>
+    <label for="card-number">Número do Cartão</label>
+    <input type="text" id="card-number" maxlength="19" placeholder="#### #### #### ####" required>
+
+    <label for="card-name">Nome do Titular</label>
+    <input type="text" id="card-name" placeholder="Como no cartão" required>
+
+    <label for="card-validity">Validade</label>
+    <input type="text" id="card-validity" maxlength="5" placeholder="MM/AA" required>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<script src="script.js"></script></script>
+
+</body>
+</html>

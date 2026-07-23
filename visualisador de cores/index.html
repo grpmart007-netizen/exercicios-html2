@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor de Cores HSL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Seletor de Cores HSL</h1>
+
+        <div class="controls">
+            <label>
+                Matiz (Hue):
+                <input type="range" id="hue" min="0" max="360" value="180">
+            </label>
+
+            <label>
+                Saturação (Saturation):
+                <input type="range" id="saturation" min="0" max="100" value="50">
+            </label>
+
+            <label>
+                Luminosidade (Lightness):
+                <input type="range" id="lightness" min="0" max="100" value="50">
+            </label>
+        </div>
+
+        <div id="colorPreview" class="preview"></div>
+
+        <p id="colorCode">hsl(180, 50%, 50%)</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

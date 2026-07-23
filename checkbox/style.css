@@ -1,0 +1,38 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 500px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .termos {
+      height: 220px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: justify;
+      line-height: 1.6;
+      background: #fafafa;
+    }
+
+    .acoes {
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 16px;
+      cursor: not-allowed;
+    }
